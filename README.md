@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# zk-Reddit Community Rewards Aggregator: a Proof-of-Concept
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

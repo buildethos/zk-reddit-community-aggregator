@@ -1,8 +1,8 @@
 # zk-Reddit Community Rewards Aggregator: a Proof-of-Concept
 
 The Ethos project envisions a future where user identities are both private and empowering. This PoC aims to illustrate a simple use case:
-(1) allow users to securely link their Reddit communities
-(2) enable third parties to reward users based on their communities, without knowing individual identities.
+1. allow users to link their Reddit communities in a secure manner.
+2. enable third parties to reward users based on their communities, without knowing individual identities.
 
 ## Objective
 
@@ -12,11 +12,12 @@ The Ethos project envisions a future where user identities are both private and 
 
 ## Available Scripts
 
-To run this project locally, run the following command
+To run this project locally, 
 
-### `npm start`
+### Run `npm start` in the main folder.
+### Run `npm start` in the /backend folder.
 
-Runs the app in the development mode.\
+Runs the web client and server in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## TODO

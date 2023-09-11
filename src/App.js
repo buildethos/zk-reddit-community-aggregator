@@ -1,24 +1,19 @@
-import React, { useState } from "react";
-import "./App.css";
+import React, { useEffect, useState } from "react";
 
 function App() {
   const [message, setMessage] = useState("");
 
-  const fetchData = () => {
-    fetch("http://localhost:5000/test-endpoint")
+  useEffect(() => {
+    fetch("http://localhost:5000/")
       .then((response) => response.json())
-      .then((data) => {
-        setMessage(data.message);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  };
+      .then((data) => setMessage(data.message));
+  }, []);
 
   return (
-    <div className="App">
-      <button onClick={fetchData}>Click to Fetch Data</button>
-      <div>{message}</div>
+    <div>
+      <h1>Reddit Auth</h1>
+      <p>{message}</p>
+      <a href="http://localhost:5000/auth/reddit">Login with Reddit</a>
     </div>
   );
 }

@@ -21,3 +21,14 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# config
+config
+
+# secret
+.env
+.env.local
+
+# Firebase CLI
+.firebase/
+.firebaserc

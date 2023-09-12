@@ -8,7 +8,10 @@ function Dashboard() {
     // Get the welcome message from server
     fetch("http://localhost:5000/")
       .then((response) => response.json())
-      .then((data) => setMessage(data.message));
+      .then((data) => setMessage(data.message))
+      .catch((error) => {
+        console.error("Can't connect to server:", error);
+      });
 
     // Try fetching the user's subreddits if they're authenticated
     fetch("http://localhost:5000/get-user-subreddits", {

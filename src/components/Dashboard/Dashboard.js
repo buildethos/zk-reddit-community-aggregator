@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function App() {
+function Dashboard() {
   const [message, setMessage] = useState("");
   const [subreddits, setSubreddits] = useState([]);
 
@@ -43,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default Dashboard;

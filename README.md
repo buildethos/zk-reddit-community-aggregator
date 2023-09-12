@@ -7,7 +7,7 @@ The Ethos project envisions a future where user identities are both private and 
 ## Objective
 
 1. Connect with Reddit: Fetch and link user community memberships.
-2. Integrate zk-SNARKs: Use zero-knowledge proofs to balance user privacy with the disclosure of community details.
+2. Integrate zk-SNARKs: Use zero-knowledge proofs to verify membership in specific communities without surfacing raw data.
 3. Enable Third-Party Rewards: Allows brands to reward communities in a privacy-preserving manner.
 
 ## Available Scripts

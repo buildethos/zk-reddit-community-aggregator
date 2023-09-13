@@ -1,10 +1,31 @@
 import React, { useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import app from "../../config/firebaseConfig";
 
 function Dashboard() {
   const [message, setMessage] = useState("");
   const [subreddits, setSubreddits] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
+    const auth = getAuth(app);
+
+    // Firebase auth observer
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+      } else {
+        setUser(null);
+      }
+    });
+
+    // Cleanup the observer when the component is unmounted
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    if (!user) return; // Don't fetch if not logged in with Firebase
+
     // Get the welcome message from server
     fetch("http://localhost:5000/")
       .then((response) => response.json())
@@ -29,7 +50,11 @@ function Dashboard() {
       .catch((error) => {
         console.error("Error fetching subreddits:", error);
       });
-  }, []);
+  }, [user]);
+
+  if (!user) {
+    return <p>Please sign in to view your dashboard.</p>;
+  }
 
   return (
     <div>
